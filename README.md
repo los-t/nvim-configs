@@ -1,4 +1,4 @@
-* My neovim configs
+# My neovim configs
 
 The plugins I use are referenced as submodules here.
 
