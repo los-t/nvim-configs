@@ -1,12 +1,12 @@
 [submodule "pack/git/start/vimagit"]
 	path = pack/git/start/vimagit
-	url = git@github.com:jreybert/vimagit.git
+	url = https://github.com/jreybert/vimagit.git
 [submodule "pack/git/start/vim-signify"]
 	path = pack/git/start/vim-signify
-	url = git@github.com:mhinz/vim-signify.git
+	url = https://github.com/mhinz/vim-signify.git
 [submodule "pack/search/start/ctrlsf.vim"]
 	path = pack/search/start/ctrlsf.vim
-	url = git@github.com:dyng/ctrlsf.vim.git
+	url = https://github.com/dyng/ctrlsf.vim.git
 [submodule "pack/git/start/git-messenger.vim"]
 	path = pack/git/start/git-messenger.vim
-	url = git@github.com:rhysd/git-messenger.vim.git
+	url = https://github.com/rhysd/git-messenger.vim.git
