@@ -10,7 +10,8 @@ Colorscheme colors/dgrin-fullcolor.vim is (or was) written by me from scratch. I
 like it, you're free to use it with or without credit - it's just colorcodes after all. But please
 don't claim, I've stolen it from you :-)
 
-If I ever think dgrin (it was a 256-color version once, hence the fullcolor suffix here) is
-finished, I'll probably move it to a separate repo.
+The colorshceme is still very far from being complete. If I ever think dgrin (it was a 256-color
+scheme once, hence the fullcolor suffix here) is finished, I'll probably move it to a separate repo.
 
 TODO: write myself a reminder on how to actually init this stuff on a new workstation.
+Probably `git clone --recursive` should be enough, though.
