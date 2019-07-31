@@ -19,8 +19,9 @@ hi PmenuSbar        cterm=none      ctermfg=233 ctermbg=234
 hi PmenuThumb       cterm=none      ctermfg=71  ctermbg=72
 
 hi StatusLine       gui=none   guifg=#86df8c guibg=#333333
-hi StatusLineNC     gui=none   guifg=#000000 guibg=#333333
+hi StatusLineNC     gui=none   guifg=#006060 guibg=#333333
 hi VertSplit        gui=none   guifg=#333333 guibg=#0b1722
+hi SignColumn       gui=none                 guibg=#0b1722
 hi Title            gui=none   guifg=#888888 guibg=#333333
 hi TabLine          gui=none   guifg=#888888 guibg=#333333
 hi TabLineFill      gui=none   guifg=#000000 guibg=#333333
@@ -33,11 +34,11 @@ hi DiffChange       cterm=none      ctermfg=0   ctermbg=139
 hi DiffDelete       cterm=none      ctermfg=123 ctermbg=246
 hi DiffText         cterm=none      ctermfg=10  ctermbg=125
 
-hi MatchParen                  guifg=#aaaaaa guibg=#3300aa
+hi MatchParen                  guifg=#ffffff guibg=#244a4f
 
 " basics groups
 hi Statement        gui=none   guifg=#cccc00
-hi Type             gui=bold   guifg=#999999
+hi Type             gui=none   guifg=#999999
 hi Constant         gui=none   guifg=#ccccff
 hi Identifier       gui=none   guifg=#666699
 hi Comment          gui=italic guifg=#666655
