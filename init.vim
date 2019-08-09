@@ -17,6 +17,7 @@ set foldmethod=syntax
 
 set autoindent
 set cindent
+set cinoptions=N-s
 
 set showmatch
 
@@ -112,7 +113,8 @@ let g:ctrlsf_ackprg = "rg"
 let g:ctrlsf_auto_close = { "normal": 0, "compact": 0 }
 let g:ctrlsf_auto_focus = { "at": "start" }
 let g:ctrlsf_indent = 2
-let g:ctrlsf_mapping = { "prev": "N", "next": "n" }
+"partial mapping override does not work for some reason
+"let g:ctrlsf_mapping = { "prev": "N", "next": "n" }
 nnoremap <leader>/ :CtrlSF 
 nnoremap <silent> <leader>* :CtrlSF<cr>
 nnoremap <silent> <leader>f :CtrlSFToggle<cr>
