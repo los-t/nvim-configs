@@ -13,10 +13,10 @@ hi CursorLineNr                guifg=#009999 guibg=#142a3f
 hi CursorLine                                guibg=#142a3f
 hi ColorColumn                               guibg=#142a3f
 
-hi Pmenu            cterm=none      ctermfg=71  ctermbg=235
-hi PmenuSel         cterm=underline ctermfg=10  ctermbg=235
-hi PmenuSbar        cterm=none      ctermfg=233 ctermbg=234
-hi PmenuThumb       cterm=none      ctermfg=71  ctermbg=72
+hi Pmenu            gui=none   guifg=#26af03 guibg=#1b1712
+hi PmenuSel         gui=none   guifg=#00ff03 guibg=#142a3f
+hi PmenuSbar        gui=none   guifg=#26af03 guibg=#1b1712
+hi PmenuThumb       gui=none   guifg=#26af03 guibg=#1b1712
 
 hi StatusLine       gui=none   guifg=#86df8c guibg=#333333
 hi StatusLineNC     gui=none   guifg=#006060 guibg=#333333
