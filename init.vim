@@ -48,8 +48,10 @@ noremap <leader>cd :lcd %:p:h<CR>
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Man and Help
-runtime! ftplugin/man.vim
-nmap <expr> <leader>m ':Man 3 '.expand('<cword>').'<cr>'
+if has("unix")
+  runtime! ftplugin/man.vim
+  nmap <expr> <leader>m ':Man 3 '.expand('<cword>').'<cr>'
+endif
 nmap <expr> <leader>h ':help '.expand('<cword>').'<cr>'
 
 " Window management
