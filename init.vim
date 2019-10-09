@@ -60,6 +60,7 @@ nnoremap <C-l> <C-w>l
 
 " File browser
 let g:loaded_netrwPlugin = 1 " don't interfere with filebeagle
+noremap <leader>e :vsplit<bar>FileBeagleBufferDir<CR>
 
 " Terminal setup
 if has("win32")
