@@ -15,3 +15,8 @@ scheme once, hence the fullcolor suffix here) is finished, I'll probably move it
 
 TODO: write myself a reminder on how to actually init this stuff on a new workstation.
 Probably `git clone --recursive` should be enough, though.
+
+## Extra software that should be installed separately
+
+- [fzy - A better fuzzy finder](https://github.com/jhawthorn/fzy)
+- [ripgrep - recursively searches directories for a regex pattern](https://github.com/BurntSushi/ripgrep)
