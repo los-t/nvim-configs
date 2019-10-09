@@ -63,11 +63,11 @@ let g:loaded_netrwPlugin = 1 " don't interfere with filebeagle
 
 " Terminal setup
 if has("win32")
-  noremap <leader>tb :term git-cmd.exe --no-cd --command=usr/bin/bash.exe -l -i<CR>
-  noremap <leader>tw :term<CR>
-  noremap <leader>tl :term bash -i<CR>
+  noremap <leader>tb :vsplit<bar>term git-cmd.exe --no-cd --command=usr/bin/bash.exe -l -i<CR>i
+  noremap <leader>tw :vsplit<bar>term<CR>i
+  noremap <leader>tl :vsplit<bar>term bash -i<CR>i
 else
-  noremap <leader>tb :term<CR>
+  noremap <leader>tb :vsplit<bar>term<CR>i
 endif
 tnoremap <Esc> <C-\><C-n>
 autocmd TermOpen * setlocal statusline=%{b:term_title}
