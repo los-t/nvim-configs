@@ -59,12 +59,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " File browser
-nnoremap <leader>e :Vexplore<cr>
-let g:netrw_liststyle = 1
-let g:netrw_sizestyle = "H"
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-let g:netrw_hide = 1
-let g:netrw_banner = 0
+let g:loaded_netrwPlugin = 1 " don't interfere with filebeagle
 
 " Terminal setup
 noremap <leader>tb :term git-cmd.exe --no-cd --command=usr/bin/bash.exe -l -i<CR>
