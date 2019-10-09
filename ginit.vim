@@ -1,5 +1,6 @@
 source ~/AppData/Local/nvim/init.vim
 
-Guifont! Consolas:h9
+GuiFont! Consolas:h12
 GuiTabline 0
+GuiPopupmenu 0
 colorscheme dgrin-fullcolor
