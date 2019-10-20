@@ -127,12 +127,17 @@ nnoremap <leader>/ :CtrlSF
 nnoremap <silent> <leader>* :CtrlSF<cr>
 nnoremap <silent> <leader>f :CtrlSFToggle<cr>
 
-let g:ale_completion_enabled = 1
-let g:ale_set_baloons = 1
+let g:ale_completion_enabled = 0
 let g:ale_linters = {
       \  'cpp': ['ccls'],
       \}
-"set omnifunc=ale#completion#OmniFunc
+
+let g:lsc_trace_level = 'off'
+let g:lsc_auto_map = v:true
+let g:lsc_server_commands = {
+      \  'cpp': { 'command': 'ccls -v -3' },
+      \  'c': { 'command' : 'ccls' },
+      \}
 
 packloadall
 silent! helptags ALL

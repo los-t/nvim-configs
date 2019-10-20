@@ -25,3 +25,6 @@
 [submodule "pack/code/start/ale"]
 	path = pack/code/start/ale
 	url = https://github.com/dense-analysis/ale.git
+[submodule "pack/code/start/vim-lsc"]
+	path = pack/code/start/vim-lsc
+	url = https://github.com/natebosch/vim-lsc.git
