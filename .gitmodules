@@ -19,3 +19,9 @@
 [submodule "pack/fs/start/vim-filebeagle"]
 	path = pack/fs/start/vim-filebeagle
 	url = https://github.com/jeetsukumaran/vim-filebeagle.git
+[submodule "pack/code/start/mesonic"]
+	path = pack/code/start/mesonic
+	url = https://github.com/igankevich/mesonic.git
+[submodule "pack/code/start/ale"]
+	path = pack/code/start/ale
+	url = https://github.com/dense-analysis/ale.git

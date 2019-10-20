@@ -127,5 +127,12 @@ nnoremap <leader>/ :CtrlSF
 nnoremap <silent> <leader>* :CtrlSF<cr>
 nnoremap <silent> <leader>f :CtrlSFToggle<cr>
 
+let g:ale_completion_enabled = 1
+let g:ale_set_baloons = 1
+let g:ale_linters = {
+      \  'cpp': ['ccls'],
+      \}
+"set omnifunc=ale#completion#OmniFunc
+
 packloadall
 silent! helptags ALL
