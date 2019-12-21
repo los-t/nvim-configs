@@ -14,7 +14,7 @@ The colorshceme is still very far from being complete. If I ever think dgrin (it
 scheme once, hence the fullcolor suffix here) is finished, I'll probably move it to a separate repo.
 
 TODO: write myself a reminder on how to actually init this stuff on a new workstation.
-Probably `git clone --recursive` should be enough, though.
+Probably `git clone --recurse-submodules` should be enough, though.
 
 ## Extra software that should be installed separately
 
