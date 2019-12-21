@@ -28,3 +28,6 @@
 [submodule "pack/code/start/vim-lsc"]
 	path = pack/code/start/vim-lsc
 	url = https://github.com/natebosch/vim-lsc.git
+[submodule "pack/lang/start/vim-glsl"]
+	path = pack/lang/start/vim-glsl
+	url = https://github.com/CaffeineViking/vim-glsl.git
