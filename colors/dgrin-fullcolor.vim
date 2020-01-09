@@ -6,6 +6,7 @@ endif
 let g:colors_name = "dgrin-fullcolor"
 
 hi Normal           gui=none   guifg=#86df8c guibg=#0b1722
+hi Visual           gui=none                 guibg=#3f3f3f
 
 "15151f
 hi LineNr           gui=none   guifg=#004040 guibg=#0b1722
@@ -52,4 +53,8 @@ hi PreProc                     guifg=#44aadd
 
 "syntax match OperatorChars "?\|+\|-\|\*\|;\|:\|,\|<\|>\|&\||\|!\|\~\|%\|=\|)\|(\|{\|}\|\.\|\[\|\]\|/\(/\|*\)\@!"
 "hi OperatorChars guifg=#338866
+
+hi lscCurrentParameter gui=bold
+hi lscReference gui=bold
+
 
