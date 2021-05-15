@@ -1,8 +1,17 @@
 filetype plugin on
 filetype indent on
 syntax on
-colorscheme dgrin-fullcolor
 set termguicolors
+if exists("g:neovide")
+  set guifont=Fira\ Code\ Retina:h16
+  let g:neovide_cursor_animation_length=0.01
+  let g:neovide_window_scroll_animation_length=0
+  let g:neovide_window_position_animation_length=0
+else
+  set guifont=Fira\ Code\ Retina:h12
+endif
+colorscheme dgrin-fullcolor
+set clipboard+=unnamedplus
 
 set vb t_vb=
 set backspace=indent,eol,start
@@ -39,9 +48,17 @@ set title titlestring=%f
 
 set formatoptions+=j
 
+if has("win32")
+  set mouse=a
+endif
+
+set hidden
+
 "--------- Key Mappings -------
-let mapleader=' '
-noremap <leader>l :ls<CR>:b<space>
+let mapleader=" "
+"noremap <leader>l :ls<CR>:b<space>
+noremap <leader>l :Telescope buffers<CR>
+noremap <leader>f :Telescope git_files<CR>
 noremap <leader>nh :nohls<CR>
 noremap <leader>cd :lcd %:p:h<CR>
 
@@ -62,6 +79,8 @@ nnoremap <C-l> <C-w>l
 
 " File browser
 let g:loaded_netrwPlugin = 1 " don't interfere with filebeagle
+let g:filebeagle_suppress_keymaps = 1
+map <silent> - <Plug>FileBeagleOpenCurrentBufferDir
 noremap <leader>e :vsplit<bar>FileBeagleBufferDir<CR>
 
 " Terminal setup
@@ -124,20 +143,63 @@ let g:ctrlsf_indent = 2
 "partial mapping override does not work for some reason
 "let g:ctrlsf_mapping = { "prev": "N", "next": "n" }
 nnoremap <leader>/ :CtrlSF 
-nnoremap <silent> <leader>* :CtrlSF<cr>
-nnoremap <silent> <leader>f :CtrlSFToggle<cr>
+"nnoremap <silent> <leader>* :CtrlSF<cr>
+"nnoremap <silent> <leader>f :CtrlSFToggle<cr>
+nnoremap <silent> <leader>* :Telescope grep_string<cr>
 
-let g:ale_completion_enabled = 0
-let g:ale_linters = {
-      \  'cpp': ['ccls'],
-      \}
+"let g:ale_completion_enabled = 0
+"let g:ale_linters = {
+"      \  'cpp': ['ccls'],
+"      \}
 
-let g:lsc_trace_level = 'off'
-let g:lsc_auto_map = v:true
-let g:lsc_server_commands = {
-      \  'cpp': { 'command': 'ccls -v -3' },
-      \  'c': { 'command' : 'ccls' },
-      \}
+"let g:lsc_trace_level = 'off'
+"let g:lsc_auto_map = v:true
+"let g:lsc_server_commands = {
+"      \  'cpp': {
+"      \    'command': 'ccls -v -3',
+"      \    'message_hooks': {
+"      \      'initialize': {
+"      \        'initializationOptions': {'cache': {'directory': 'd:\\tmp\\cache'}},
+"      \        'rootUri': {m, p -> lsc#uri#documentUri(fnamemodify(findfile('compile_commands.json', expand('%:p') . ';'), ':p:h'))}
+"      \      },
+"      \    },
+"      \  },
+"      \  'c': { 'command' : 'ccls' },
+"      \}
 
 packloadall
 silent! helptags ALL
+
+lua require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> <leader>o  <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
+autocmd Filetype cpp set omnifunc=v:lua.vim.lsp.omnifunc
+autocmd Filetype c set omnifunc=v:lua.vim.lsp.omnifunc
+
+" Completion
+set completeopt=menuone,noinsert,noselect
+
+" TreeSitter
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "cpp" },
+  highlight = {
+    enable = true
+  },
+  indent = {
+    enable = false
+  },
+  incremental_selection = {
+    enable = false
+  },
+}
+EOF

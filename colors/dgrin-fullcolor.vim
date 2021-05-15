@@ -5,7 +5,7 @@ if exists("syntax_on")
 endif
 let g:colors_name = "dgrin-fullcolor"
 
-hi Normal           gui=none   guifg=#86df8c guibg=#0b1722
+hi Normal           gui=none   guifg=#86df8c guibg=#091420
 hi Visual           gui=none                 guibg=#3f3f3f
 
 "15151f
@@ -56,5 +56,9 @@ hi PreProc                     guifg=#44aadd
 
 hi lscCurrentParameter gui=bold
 hi lscReference gui=bold
+
+hi LspDiagnosticsDefaultError gui=none guifg=#aa4040
+hi LspDiagnosticsDefaultWarning gui=none guifg=#a1713f
+hi LspDiagnosticsDefaultInformation gui=none guifg=#404040
 
 

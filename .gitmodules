@@ -31,3 +31,27 @@
 [submodule "pack/lang/start/vim-glsl"]
 	path = pack/lang/start/vim-glsl
 	url = https://github.com/CaffeineViking/vim-glsl.git
+[submodule "pack/code/start/nvim-lsp"]
+	path = pack/code/start/nvim-lsp
+	url = https://github.com/neovim/nvim-lsp.git
+[submodule "pack/colors/start/edge"]
+	path = pack/colors/start/edge
+	url = https://github.com/sainnhe/edge.git
+[submodule "pack/code/start/completion-nvim"]
+	path = pack/code/start/completion-nvim
+	url = https://github.com/nvim-lua/completion-nvim.git
+[submodule "pack/code/start/nvim-treesitter"]
+	path = pack/code/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter.git
+[submodule "pack/util/start/plenary.nvim"]
+	path = pack/util/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim.git
+[submodule "pack/util/start/popup.nvim"]
+	path = pack/util/start/popup.nvim
+	url = https://github.com/nvim-lua/popup.nvim.git
+[submodule "pack/search/telescope.nvim"]
+	path = pack/search/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim.git
+[submodule "pack/code/start/nvim-compe"]
+	path = pack/code/start/nvim-compe
+	url = https://github.com/hrsh7th/nvim-compe.git
