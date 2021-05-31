@@ -147,26 +147,6 @@ nnoremap <leader>/ :CtrlSF
 "nnoremap <silent> <leader>f :CtrlSFToggle<cr>
 nnoremap <silent> <leader>* :Telescope grep_string<cr>
 
-"let g:ale_completion_enabled = 0
-"let g:ale_linters = {
-"      \  'cpp': ['ccls'],
-"      \}
-
-"let g:lsc_trace_level = 'off'
-"let g:lsc_auto_map = v:true
-"let g:lsc_server_commands = {
-"      \  'cpp': {
-"      \    'command': 'ccls -v -3',
-"      \    'message_hooks': {
-"      \      'initialize': {
-"      \        'initializationOptions': {'cache': {'directory': 'd:\\tmp\\cache'}},
-"      \        'rootUri': {m, p -> lsc#uri#documentUri(fnamemodify(findfile('compile_commands.json', expand('%:p') . ';'), ':p:h'))}
-"      \      },
-"      \    },
-"      \  },
-"      \  'c': { 'command' : 'ccls' },
-"      \}
-
 packloadall
 silent! helptags ALL
 
