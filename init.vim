@@ -165,6 +165,7 @@ autocmd Filetype c set omnifunc=v:lua.vim.lsp.omnifunc
 
 " Completion
 set completeopt=menuone,noinsert,noselect
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
 " TreeSitter
 set foldmethod=expr
