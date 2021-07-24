@@ -150,7 +150,7 @@ nnoremap <silent> <leader>* :Telescope grep_string<cr>
 packloadall
 silent! helptags ALL
 
-lua require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.clangd.setup{}
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
@@ -164,8 +164,22 @@ autocmd Filetype cpp set omnifunc=v:lua.vim.lsp.omnifunc
 autocmd Filetype c set omnifunc=v:lua.vim.lsp.omnifunc
 
 " Completion
-set completeopt=menuone,noinsert,noselect
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+set completeopt=menuone,noselect
+lua << EOF
+require'compe'.setup {
+  enabled = true,
+  autocomplete = true,
+  debug = true,
+  source = {
+    path = true,
+    tags = true,
+    nvim_lsp = true,
+    nvim_lua = true
+  },
+}
+EOF
+
+set complete
 
 " TreeSitter
 set foldmethod=expr
@@ -189,3 +203,4 @@ EOF
 lua << EOF
 require'gitsigns'.setup { }
 EOF
+

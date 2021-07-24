@@ -25,9 +25,6 @@
 [submodule "pack/colors/start/edge"]
 	path = pack/colors/start/edge
 	url = https://github.com/sainnhe/edge.git
-[submodule "pack/code/start/completion-nvim"]
-	path = pack/code/start/completion-nvim
-	url = https://github.com/nvim-lua/completion-nvim.git
 [submodule "pack/code/start/nvim-treesitter"]
 	path = pack/code/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter.git
