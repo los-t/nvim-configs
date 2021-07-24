@@ -1,61 +1,61 @@
-filetype plugin on
-filetype indent on
-syntax on
-set termguicolors
-if exists("g:neovide")
-  set guifont=Fira\ Code\ Retina:h16
-  let g:neovide_cursor_animation_length=0.01
-  let g:neovide_window_scroll_animation_length=0
-  let g:neovide_window_position_animation_length=0
-else
-  set guifont=Fira\ Code\ Retina:h12
-endif
-colorscheme dgrin-fullcolor
-set clipboard+=unnamedplus
+vim.cmd [[filetype plugin on]]
+vim.cmd [[filetype indent on]]
+vim.cmd [[syntax on]]
 
-set vb t_vb=
-set backspace=indent,eol,start
+vim.cmd [[colorscheme dgrin-fullcolor]]
+vim.o.termguicolors = true
+vim.o.guifont = "Fira Code Retina:h12"
+vim.o.backspace = "indent,eol,start"
 
-set shiftwidth=2
-set tabstop=2
-set smarttab
-set expandtab
+vim.bo.shiftwidth = 2
+vim.bo.tabstop = 2
+vim.o.smarttab = true
+vim.o.expandtab = true
 
-set foldenable
-set foldmethod=syntax
+vim.o.foldenable = true
+vim.o.foldmethod = "syntax"
 
-set autoindent
-set cindent
-set cinoptions=N-s
+vim.bo.autoindent = true
+vim.bo.cindent = true
+vim.bo.cinoptions = "N-s"
 
-set showmatch
+vim.o.showmatch = true
 
-set nu
-set cursorline
-set colorcolumn=100
-set signcolumn=yes
-set scrolloff=5
+vim.wo.number = true
+vim.o.cursorline = true
+vim.o.colorcolumn = "100"
+vim.o.signcolumn = "yes"
+vim.o.scrolloff = 5
 
-set ignorecase
+vim.o.ignorecase = true
 
-" Status line
-set laststatus=2
+-- Status line
+vim.o.laststatus = 2
 
-" QuickFix and Make
-set switchbuf=useopen,usetab,newtab
+-- QuickFix and Make
+vim.o.switchbuf = "useopen,usetab,newtab"
 
-set title titlestring=%f
+vim.o.title = true
+vim.o.titlestring = "%f"
 
-set formatoptions+=j
+vim.o.clipboard = "unnamedplus"
+vim.o.hidden = true
+
+vim.g.mapleader = " "
+
+vim.api.nvim_exec([[
+"if exists("g:neovide")
+"  set guifont=Fira\ Code\ Retina:h16
+"  let g:neovide_cursor_animation_length=0.01
+"  let g:neovide_window_scroll_animation_length=0
+"  let g:neovide_window_position_animation_length=0
+"endif
 
 if has("win32")
   set mouse=a
 endif
 
-set hidden
-
 "--------- Key Mappings -------
-let mapleader=" "
 "noremap <leader>l :ls<CR>:b<space>
 noremap <leader>l :Telescope buffers<CR>
 noremap <leader>f :Telescope git_files<CR>
@@ -133,8 +133,6 @@ if has("unix")
 endif
 
 " Plugins
-"let g:signify_vcs_list = ['git']
-
 let g:ctrlsf_default_root = "project"
 let g:ctrlsf_ackprg = "rg"
 let g:ctrlsf_auto_close = { "normal": 0, "compact": 0 }
@@ -149,8 +147,10 @@ nnoremap <silent> <leader>* :Telescope grep_string<cr>
 
 packloadall
 silent! helptags ALL
+]], false)
 
-lua require'lspconfig'.clangd.setup{}
+require'lspconfig'.clangd.setup{}
+vim.api.nvim_exec([[
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
@@ -162,10 +162,10 @@ nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> <leader>o  <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 autocmd Filetype cpp set omnifunc=v:lua.vim.lsp.omnifunc
 autocmd Filetype c set omnifunc=v:lua.vim.lsp.omnifunc
+]], false)
 
-" Completion
-set completeopt=menuone,noselect
-lua << EOF
+-- Completion
+vim.o.completeopt = "menuone,noselect"
 require'compe'.setup {
   enabled = true,
   autocomplete = true,
@@ -177,14 +177,11 @@ require'compe'.setup {
     nvim_lua = true
   },
 }
-EOF
 
-set complete
+-- TreeSitter
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
-" TreeSitter
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-lua << EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "c", "cpp" },
   highlight = {
@@ -197,10 +194,5 @@ require'nvim-treesitter.configs'.setup {
     enable = false
   },
 }
-EOF
 
-" Git-Signs
-lua << EOF
 require'gitsigns'.setup { }
-EOF
-
