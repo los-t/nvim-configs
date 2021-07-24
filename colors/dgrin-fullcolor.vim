@@ -36,6 +36,7 @@ hi DiffDelete       cterm=none      ctermfg=123 ctermbg=246
 hi DiffText         cterm=none      ctermfg=10  ctermbg=125
 
 hi MatchParen                  guifg=#ffffff guibg=#244a4f
+hi Search                      guifg=#000000 guibg=#a05f5f
 
 " basics groups
 hi Statement        gui=none   guifg=#cccc00
