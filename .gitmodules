@@ -1,6 +1,3 @@
-[submodule "pack/git/start/vimagit"]
-	path = pack/git/start/vimagit
-	url = https://github.com/jreybert/vimagit.git
 [submodule "pack/git/start/vim-signify"]
 	path = pack/git/start/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
@@ -13,15 +10,9 @@
 [submodule "pack/lang/start/vim-squirrel"]
 	path = pack/lang/start/vim-squirrel
 	url = https://github.com/xevz/vim-squirrel.git
-[submodule "pack/git/start/vim-fugitive"]
-	path = pack/git/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
 [submodule "pack/fs/start/vim-filebeagle"]
 	path = pack/fs/start/vim-filebeagle
 	url = https://github.com/jeetsukumaran/vim-filebeagle.git
-[submodule "pack/code/start/mesonic"]
-	path = pack/code/start/mesonic
-	url = https://github.com/igankevich/mesonic.git
 [submodule "pack/code/start/ale"]
 	path = pack/code/start/ale
 	url = https://github.com/dense-analysis/ale.git
