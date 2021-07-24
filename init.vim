@@ -69,7 +69,7 @@ if has("unix")
   runtime! ftplugin/man.vim
   nmap <expr> <leader>m ':Man 3 '.expand('<cword>').'<cr>'
 endif
-nmap <expr> <leader>h ':help '.expand('<cword>').'<cr>'
+"nmap <expr> <leader>h ':help '.expand('<cword>').'<cr>'
 
 " Window management
 nnoremap <C-h> <C-w>h
@@ -133,7 +133,7 @@ if has("unix")
 endif
 
 " Plugins
-let g:signify_vcs_list = ['git']
+"let g:signify_vcs_list = ['git']
 
 let g:ctrlsf_default_root = "project"
 let g:ctrlsf_ackprg = "rg"
@@ -183,4 +183,9 @@ require'nvim-treesitter.configs'.setup {
     enable = false
   },
 }
+EOF
+
+" Git-Signs
+lua << EOF
+require'gitsigns'.setup { }
 EOF

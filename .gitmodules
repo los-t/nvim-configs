@@ -1,6 +1,3 @@
-[submodule "pack/git/start/vim-signify"]
-	path = pack/git/start/vim-signify
-	url = https://github.com/mhinz/vim-signify.git
 [submodule "pack/search/start/ctrlsf.vim"]
 	path = pack/search/start/ctrlsf.vim
 	url = https://github.com/dyng/ctrlsf.vim.git
@@ -46,3 +43,6 @@
 [submodule "pack/code/start/nvim-compe"]
 	path = pack/code/start/nvim-compe
 	url = https://github.com/hrsh7th/nvim-compe.git
+[submodule "pack/git/start/gitsigns.nvim"]
+	path = pack/git/start/gitsigns.nvim
+	url = https://github.com/lewis6991/gitsigns.nvim.git
