@@ -8,7 +8,9 @@ vim.o.guifont = "Fira Code Retina:h12"
 vim.o.backspace = "indent,eol,start"
 
 vim.bo.shiftwidth = 2
+vim.o.shiftwidth = 2
 vim.bo.tabstop = 2
+vim.o.tabstop = 2
 vim.o.smarttab = true
 vim.o.expandtab = true
 
