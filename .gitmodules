@@ -43,3 +43,6 @@
 [submodule "pack/git/start/gitsigns.nvim"]
 	path = pack/git/start/gitsigns.nvim
 	url = https://github.com/lewis6991/gitsigns.nvim.git
+[submodule "pack/lang/start/hlsl.vim"]
+	path = pack/lang/start/hlsl.vim
+	url = https://github.com/beyondmarc/hlsl.vim.git
