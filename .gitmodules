@@ -22,9 +22,6 @@
 [submodule "pack/code/start/nvim-lsp"]
 	path = pack/code/start/nvim-lsp
 	url = https://github.com/neovim/nvim-lsp.git
-[submodule "pack/colors/start/edge"]
-	path = pack/colors/start/edge
-	url = https://github.com/sainnhe/edge.git
 [submodule "pack/code/start/nvim-treesitter"]
 	path = pack/code/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter.git
@@ -46,3 +43,9 @@
 [submodule "pack/lang/start/hlsl.vim"]
 	path = pack/lang/start/hlsl.vim
 	url = https://github.com/beyondmarc/hlsl.vim.git
+[submodule "pack/util/start/lush.nvim"]
+	path = pack/util/start/lush.nvim
+	url = https://github.com/rktjmp/lush.nvim.git
+[submodule "pack/colors/start/material.nvim"]
+	path = pack/colors/start/material.nvim
+	url = https://github.com/marko-cerovac/material.nvim.git

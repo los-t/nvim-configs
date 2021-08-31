@@ -2,8 +2,6 @@ vim.cmd [[filetype plugin on]]
 vim.cmd [[filetype indent on]]
 vim.cmd [[syntax on]]
 
-vim.cmd [[colorscheme dgrin-fullcolor]]
-vim.o.termguicolors = true
 vim.o.guifont = "Fira Code Retina:h12"
 vim.o.backspace = "indent,eol,start"
 
@@ -198,3 +196,12 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require'gitsigns'.setup { }
+
+-- Colors
+vim.o.termguicolors = true
+vim.g.material_style = 'deep ocean'
+vim.g.material_italic_comments = true
+vim.g.material_italic_strings = true
+vim.g.material_borders = true
+require('material').set()
+
