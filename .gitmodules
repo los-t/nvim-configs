@@ -1,6 +1,3 @@
-[submodule "pack/search/start/ctrlsf.vim"]
-	path = pack/search/start/ctrlsf.vim
-	url = https://github.com/dyng/ctrlsf.vim.git
 [submodule "pack/git/start/git-messenger.vim"]
 	path = pack/git/start/git-messenger.vim
 	url = https://github.com/rhysd/git-messenger.vim.git
