@@ -169,9 +169,9 @@ vim.o.completeopt = "menuone,noselect"
 require'compe'.setup {
   enabled = true,
   autocomplete = true,
-  debug = true,
+  debug = false,
   source = {
-    path = true,
+    path = false,
     tags = true,
     nvim_lsp = true,
     nvim_lua = true
