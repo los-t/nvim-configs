@@ -150,6 +150,7 @@ silent! helptags ALL
 ]], false)
 
 require'lspconfig'.clangd.setup{}
+require'lspconfig'.tsserver.setup{}
 vim.api.nvim_exec([[
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
