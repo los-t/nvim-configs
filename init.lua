@@ -90,8 +90,6 @@ endif
 "nmap <expr> <leader>h ':help '.expand('<cword>').'<cr>'
 
 " File browser
-let g:loaded_netrwPlugin = 1 " don't interfere with filebeagle
-let g:filebeagle_suppress_keymaps = 1
 map <silent> - <Plug>FileBeagleOpenCurrentBufferDir
 noremap <leader>e :vsplit<bar>FileBeagleBufferDir<CR>
 
@@ -148,8 +146,8 @@ packloadall
 silent! helptags ALL
 ]], false)
 
-require'lspconfig'.clangd.setup{}
-require'lspconfig'.tsserver.setup{}
+require('plugins')
+
 vim.api.nvim_exec([[
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
@@ -163,45 +161,3 @@ nnoremap <silent> <leader>o  <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()
 autocmd Filetype cpp set omnifunc=v:lua.vim.lsp.omnifunc
 autocmd Filetype c set omnifunc=v:lua.vim.lsp.omnifunc
 ]], false)
-
--- Completion
-vim.o.completeopt = "menuone,noselect"
-require'compe'.setup {
-  enabled = true,
-  autocomplete = true,
-  debug = false,
-  source = {
-    path = false,
-    tags = true,
-    nvim_lsp = true,
-    nvim_lua = true
-  },
-}
-
--- TreeSitter
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "cpp" },
-  highlight = {
-    enable = true
-  },
-  indent = {
-    enable = false
-  },
-  incremental_selection = {
-    enable = false
-  },
-}
-
-require'gitsigns'.setup { }
-
--- Colors
-vim.o.termguicolors = true
-vim.g.material_style = 'deep ocean'
-vim.g.material_italic_comments = true
-vim.g.material_italic_strings = true
-vim.g.material_borders = true
-require('material').set()
-
