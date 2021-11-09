@@ -70,12 +70,11 @@ key_map("n", "<C-l>", "<C-w>l")
 
 
 vim.api.nvim_exec([[
-"if exists("g:neovide")
-"  set guifont=Fira\ Code\ Retina:h16
-"  let g:neovide_cursor_animation_length=0.01
-"  let g:neovide_window_scroll_animation_length=0
-"  let g:neovide_window_position_animation_length=0
-"endif
+if exists("g:neovide")
+  let g:neovide_cursor_animation_length=0
+  let g:neovide_window_scroll_animation_length=0
+  let g:neovide_window_position_animation_length=0
+endif
 
 if has("win32")
   set mouse=a
