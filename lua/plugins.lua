@@ -15,6 +15,7 @@ return require('packer').startup(function()
   }
 
   -- Lang
+  use 'ray-x/lsp_signature.nvim'
 	use{
     'neovim/nvim-lsp',
     config=[[require('config.lsp')]],

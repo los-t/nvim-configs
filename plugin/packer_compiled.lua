@@ -85,6 +85,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\hlsl.vim",
     url = "https://github.com/beyondmarc/hlsl.vim"
   },
+  ["lsp_signature.nvim"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18lsp_signature\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
   ["material.nvim"] = {
     config = { "require('config.material')" },
     loaded = true,
@@ -148,18 +154,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-compe
-time([[Config for nvim-compe]], true)
-require('config.completion')
-time([[Config for nvim-compe]], false)
--- Config for: vim-filebeagle
-time([[Config for vim-filebeagle]], true)
-require('config.filebeagle')
-time([[Config for vim-filebeagle]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('config.treesitter')
 time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-lsp
+time([[Config for nvim-lsp]], true)
+require('config.lsp')
+time([[Config for nvim-lsp]], false)
 -- Config for: material.nvim
 time([[Config for material.nvim]], true)
 require('config.material')
@@ -168,10 +170,18 @@ time([[Config for material.nvim]], false)
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-lsp
-time([[Config for nvim-lsp]], true)
-require('config.lsp')
-time([[Config for nvim-lsp]], false)
+-- Config for: lsp_signature.nvim
+time([[Config for lsp_signature.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
+time([[Config for lsp_signature.nvim]], false)
+-- Config for: nvim-compe
+time([[Config for nvim-compe]], true)
+require('config.completion')
+time([[Config for nvim-compe]], false)
+-- Config for: vim-filebeagle
+time([[Config for vim-filebeagle]], true)
+require('config.filebeagle')
+time([[Config for vim-filebeagle]], false)
 if should_profile then save_profiles() end
 
 end)
