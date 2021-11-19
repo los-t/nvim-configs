@@ -1,12 +1,12 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
-	use{
+  use{
     'jeetsukumaran/vim-filebeagle',
     config=[[require('config.filebeagle')]],
   }
 
-	use{
+  use{
     'nvim-telescope/telescope.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
@@ -16,11 +16,11 @@ return require('packer').startup(function()
 
   -- Lang
   use 'ray-x/lsp_signature.nvim'
-	use{
+  use{
     'neovim/nvim-lsp',
     config=[[require('config.lsp')]],
   }
-	use{
+  use{
     'hrsh7th/nvim-cmp',
     requires = {
       'hrsh7th/cmp-nvim-lsp',
@@ -32,24 +32,24 @@ return require('packer').startup(function()
     },
     config=[[require('config.completion')]],
   }
-	use 'xevz/vim-squirrel'
-	use 'beyondmarc/hlsl.vim'
-	use 'CaffeineViking/vim-glsl'
+  use 'xevz/vim-squirrel'
+  use 'beyondmarc/hlsl.vim'
+  use 'CaffeineViking/vim-glsl'
 
   -- Git
-	use 'rhysd/git-messenger.vim'
-	use{
+  use 'rhysd/git-messenger.vim'
+  use{
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('gitsigns').setup() end,
   }
 
   -- Colors
-	use{
+  use{
     'nvim-treesitter/nvim-treesitter',
     config = [[require('config.treesitter')]],
   }
-	use{
+  use{
     'marko-cerovac/material.nvim',
     config = [[require('config.material')]],
   }
