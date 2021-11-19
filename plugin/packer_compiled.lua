@@ -69,6 +69,36 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
   ["git-messenger.vim"] = {
     loaded = true,
     path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\git-messenger.vim",
@@ -86,7 +116,6 @@ _G.packer_plugins = {
     url = "https://github.com/beyondmarc/hlsl.vim"
   },
   ["lsp_signature.nvim"] = {
-    config = { "\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18lsp_signature\frequire\0" },
     loaded = true,
     path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp_signature.nvim",
     url = "https://github.com/ray-x/lsp_signature.nvim"
@@ -97,11 +126,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\material.nvim",
     url = "https://github.com/marko-cerovac/material.nvim"
   },
-  ["nvim-compe"] = {
+  ["nvim-cmp"] = {
     config = { "require('config.completion')" },
     loaded = true,
-    path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-compe",
-    url = "https://github.com/hrsh7th/nvim-compe"
+    path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lsp"] = {
     config = { "require('config.lsp')" },
@@ -154,14 +183,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: vim-filebeagle
+time([[Config for vim-filebeagle]], true)
+require('config.filebeagle')
+time([[Config for vim-filebeagle]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('config.treesitter')
 time([[Config for nvim-treesitter]], false)
--- Config for: nvim-lsp
-time([[Config for nvim-lsp]], true)
-require('config.lsp')
-time([[Config for nvim-lsp]], false)
 -- Config for: material.nvim
 time([[Config for material.nvim]], true)
 require('config.material')
@@ -170,18 +199,14 @@ time([[Config for material.nvim]], false)
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: lsp_signature.nvim
-time([[Config for lsp_signature.nvim]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
-time([[Config for lsp_signature.nvim]], false)
--- Config for: nvim-compe
-time([[Config for nvim-compe]], true)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
 require('config.completion')
-time([[Config for nvim-compe]], false)
--- Config for: vim-filebeagle
-time([[Config for vim-filebeagle]], true)
-require('config.filebeagle')
-time([[Config for vim-filebeagle]], false)
+time([[Config for nvim-cmp]], false)
+-- Config for: nvim-lsp
+time([[Config for nvim-lsp]], true)
+require('config.lsp')
+time([[Config for nvim-lsp]], false)
 if should_profile then save_profiles() end
 
 end)
