@@ -78,7 +78,7 @@ key_map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 key_map("n", "1gD", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
 key_map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 key_map("n", "g0", "<cmd>lua vim.lsp.buf.document_symbol()<CR>")
-key_map("n", "<leader>o", "<cmd>lua vim.diagnostic.show_line_diagnostics()<CR>")
+key_map("n", "<leader>o", "<cmd>lua vim.diagnostic.open_float(0, {scope=\"line\", border=\"single\"})<CR>")
 
 vim.api.nvim_exec([[
 if exists("g:neovide")
