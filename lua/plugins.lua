@@ -35,6 +35,10 @@ return require('packer').startup(function()
   use 'xevz/vim-squirrel'
   use 'beyondmarc/hlsl.vim'
   use 'CaffeineViking/vim-glsl'
+  use{
+    'numToStr/Comment.nvim',
+    config = function() require('Comment').setup() end,
+  }
 
   -- Git
   use 'rhysd/git-messenger.vim'
