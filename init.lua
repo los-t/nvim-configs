@@ -70,6 +70,15 @@ key_map("n", "<C-j>", "<C-w>j")
 key_map("n", "<C-k>", "<C-w>k")
 key_map("n", "<C-l>", "<C-w>l")
 
+key_map("n", "gd", "<cmd>lua vim.lsp.buf.declaration()<CR>")
+key_map("n", "<C-]>", "<cmd>lua vim.lsp.buf.definition()<CR>")
+key_map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
+key_map("n", "gD", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+key_map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+key_map("n", "1gD", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
+key_map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
+key_map("n", "g0", "<cmd>lua vim.lsp.buf.document_symbol()<CR>")
+key_map("n", "<leader>o", "<cmd>lua vim.diagnostic.show_line_diagnostics()<CR>")
 
 vim.api.nvim_exec([[
 if exists("g:neovide")
@@ -148,15 +157,6 @@ silent! helptags ALL
 ]], false)
 
 vim.api.nvim_exec([[
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> <leader>o  <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>
 autocmd Filetype cpp set omnifunc=v:lua.vim.lsp.omnifunc
 autocmd Filetype c set omnifunc=v:lua.vim.lsp.omnifunc
 ]], false)
