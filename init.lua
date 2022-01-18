@@ -80,6 +80,18 @@ key_map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 key_map("n", "g0", "<cmd>lua vim.lsp.buf.document_symbol()<CR>")
 key_map("n", "<leader>o", "<cmd>lua vim.diagnostic.open_float(0, {scope=\"line\", border=\"single\"})<CR>")
 
+key_map("n", "-", ":FileBeagleBufferDir<CR>")
+key_map("n", "<leader>e", ":vsplit<bar>FileBeagleBufferDir<CR>")
+
+key_map("t", "<Esc>", "<C-\\><C-n>")
+if (vim.fn.has("win32")) then
+  key_map("n", "<leader>tb", ":vsplit<bar>term git-cmd.exe")
+  key_map("n", "<leader>tw", ":vsplit<bar>term<CR>i")
+  key_map("n", "<leader>tl", ":vsplit<bar>term bash -i<CR>i")
+else
+  key_map("n", "<leader>tb", ":vsplit<bar>term<CR>i")
+end
+
 vim.api.nvim_exec([[
 if exists("g:neovide")
   let g:neovide_cursor_animation_length=0
@@ -100,19 +112,7 @@ if has("unix")
 endif
 "nmap <expr> <leader>h ':help '.expand('<cword>').'<cr>'
 
-" File browser
-map <silent> - <Plug>FileBeagleOpenCurrentBufferDir
-noremap <leader>e :vsplit<bar>FileBeagleBufferDir<CR>
-
 " Terminal setup
-if has("win32")
-  noremap <leader>tb :vsplit<bar>term git-cmd.exe --no-cd --command=usr/bin/bash.exe -l -i<CR>i
-  noremap <leader>tw :vsplit<bar>term<CR>i
-  noremap <leader>tl :vsplit<bar>term bash -i<CR>i
-else
-  noremap <leader>tb :vsplit<bar>term<CR>i
-endif
-tnoremap <Esc> <C-\><C-n>
 autocmd TermOpen * setlocal statusline=%{b:term_title}
 
 if has("unix")
