@@ -42,6 +42,9 @@ vim.o.clipboard = "unnamedplus"
 vim.o.hidden = true
 
 vim.g.mapleader = " "
+if vim.fn.has("win32") then
+  vim.g.mouse = "a"
+end
 
 require('plugins')
 
@@ -97,10 +100,6 @@ if exists("g:neovide")
   let g:neovide_cursor_animation_length=0
   let g:neovide_window_scroll_animation_length=0
   let g:neovide_window_position_animation_length=0
-endif
-
-if has("win32")
-  set mouse=a
 endif
 
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
