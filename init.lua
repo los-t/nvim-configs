@@ -151,6 +151,4 @@ if has("unix")
   nnoremap <silent> <leader>v :call FzyCommand('rg --files .', ':vsplit ')<cr>
   nnoremap <silent> <leader>t :call FzyCommand('rg --files .', ':tabnew ')<cr>
 endif
-
-silent! helptags ALL
 ]], false)
