@@ -155,8 +155,3 @@ endif
 
 silent! helptags ALL
 ]], false)
-
-vim.api.nvim_exec([[
-autocmd Filetype cpp set omnifunc=v:lua.vim.lsp.omnifunc
-autocmd Filetype c set omnifunc=v:lua.vim.lsp.omnifunc
-]], false)
