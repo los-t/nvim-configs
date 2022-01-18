@@ -43,6 +43,8 @@ vim.o.hidden = true
 
 vim.g.mapleader = " "
 
+require('plugins')
+
 -- Key Mappings
 
 local key_map = function(mode, lhs, rhs)
@@ -142,11 +144,8 @@ if has("unix")
   nnoremap <silent> <leader>t :call FzyCommand('rg --files .', ':tabnew ')<cr>
 endif
 
-packloadall
 silent! helptags ALL
 ]], false)
-
-require('plugins')
 
 vim.api.nvim_exec([[
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
