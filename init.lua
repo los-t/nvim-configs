@@ -101,54 +101,7 @@ if exists("g:neovide")
   let g:neovide_window_scroll_animation_length=0
   let g:neovide_window_position_animation_length=0
 endif
-
-map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-" Man and Help
-if has("unix")
-  runtime! ftplugin/man.vim
-  nmap <expr> <leader>m ':Man 3 '.expand('<cword>').'<cr>'
-endif
-"nmap <expr> <leader>h ':help '.expand('<cword>').'<cr>'
-
-" Terminal setup
-autocmd TermOpen * setlocal statusline=%{b:term_title}
-
-if has("unix")
-  " Poormans fzy.vim
-  function! FzyCommand(choice_command, vim_command) abort
-    let l:callback = {
-                \ 'window_id': win_getid(),
-                \ 'filename': tempname(),
-                \ 'vim_command':  a:vim_command
-                \ }
-
-    function! l:callback.on_exit(job_id, data, event) abort
-      if a:data == 0 " don't touch buffer if term window closed manually (e.g. with :q)
-        bdelete!
-        call win_gotoid(self.window_id)
-        if filereadable(self.filename)
-          try
-            let l:selected_filenames = readfile(self.filename)
-            if !empty(l:selected_filenames)
-              exec self.vim_command . l:selected_filenames[0]
-            endif
-          catch /E684/
-          endtry
-        endif
-        call delete(self.filename)
-      endif
-    endfunction
-
-    botright 10 new
-    let l:term_command = a:choice_command . ' | fzy > ' .  l:callback.filename
-    silent call termopen(l:term_command, l:callback)
-    setlocal nonumber norelativenumber
-    startinsert
-  endfunction
-
-  nnoremap <silent> <leader>o :call FzyCommand('rg --files .', ':edit ')<cr>
-  nnoremap <silent> <leader>v :call FzyCommand('rg --files .', ':vsplit ')<cr>
-  nnoremap <silent> <leader>t :call FzyCommand('rg --files .', ':tabnew ')<cr>
-endif
 ]], false)
+
+-- Terminal setup
+vim.api.nvim_command([[autocmd TermOpen * setlocal statusline=%{b:term_title}]])
