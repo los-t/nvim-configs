@@ -41,7 +41,10 @@ return require('packer').startup(function()
   }
 
   -- Git
-  use 'rhysd/git-messenger.vim'
+  use{
+    'rhysd/git-messenger.vim',
+    config = [[require('config.gitmessenger')]],
+  }
   use{
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
