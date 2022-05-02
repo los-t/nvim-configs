@@ -48,6 +48,8 @@ return require('packer').startup(function()
     config = function() require('gitsigns').setup() end,
   }
 
+  use 'tpope/vim-fugitive'
+
   -- Colors
   use{
     'nvim-treesitter/nvim-treesitter',
