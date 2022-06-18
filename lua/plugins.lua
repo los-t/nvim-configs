@@ -40,6 +40,22 @@ return require('packer').startup(function()
     config = function() require('Comment').setup() end,
   }
 
+  -- Debugging
+  use{
+    'mfussenegger/nvim-dap',
+    config=[[require('config.nvim-dap')]],
+  }
+  use{
+    'theHamsta/nvim-dap-virtual-text',
+    config = function() require('nvim-dap-virtual-text').setup() end,
+    requires = {"mfussenegger/nvim-dap"},
+  }
+  use{
+    "rcarriga/nvim-dap-ui",
+    requires = {"mfussenegger/nvim-dap"},
+    config = function() require('dapui').setup() end,
+  }
+
   -- Git
   use{
     'rhysd/git-messenger.vim',
