@@ -11,6 +11,7 @@ vim.bo.tabstop = 2
 vim.o.tabstop = 2
 vim.o.smarttab = true
 vim.o.expandtab = true
+vim.o.fixeol = false
 
 vim.o.foldenable = true
 vim.o.foldmethod = "syntax"
