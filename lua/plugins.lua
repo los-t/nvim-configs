@@ -74,7 +74,7 @@ return require('packer').startup(function()
     config = [[require('config.treesitter')]],
   }
   use{
-    'marko-cerovac/material.nvim',
-    config = [[require('config.material')]],
+    'rebelot/kanagawa.nvim',
+    config = function() vim.cmd('colorscheme kanagawa') end,
   }
 end)

@@ -127,16 +127,16 @@ _G.packer_plugins = {
     path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\hlsl.vim",
     url = "https://github.com/beyondmarc/hlsl.vim"
   },
+  ["kanagawa.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\25colorscheme kanagawa\bcmd\bvim\0" },
+    loaded = true,
+    path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp_signature.nvim",
     url = "https://github.com/ray-x/lsp_signature.nvim"
-  },
-  ["material.nvim"] = {
-    config = { "require('config.material')" },
-    loaded = true,
-    path = "C:\\Users\\dvn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\material.nvim",
-    url = "https://github.com/marko-cerovac/material.nvim"
   },
   ["nvim-cmp"] = {
     config = { "require('config.completion')" },
@@ -218,42 +218,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('config.completion')
-time([[Config for nvim-cmp]], false)
--- Config for: nvim-dap
-time([[Config for nvim-dap]], true)
-require('config.nvim-dap')
-time([[Config for nvim-dap]], false)
--- Config for: nvim-dap-ui
-time([[Config for nvim-dap-ui]], true)
-try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
-time([[Config for nvim-dap-ui]], false)
--- Config for: nvim-dap-virtual-text
-time([[Config for nvim-dap-virtual-text]], true)
-try_loadstring("\27LJ\2\nC\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\26nvim-dap-virtual-text\frequire\0", "config", "nvim-dap-virtual-text")
-time([[Config for nvim-dap-virtual-text]], false)
--- Config for: git-messenger.vim
-time([[Config for git-messenger.vim]], true)
-require('config.gitmessenger')
-time([[Config for git-messenger.vim]], false)
--- Config for: material.nvim
-time([[Config for material.nvim]], true)
-require('config.material')
-time([[Config for material.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('config.treesitter')
-time([[Config for nvim-treesitter]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-dap-virtual-text
+time([[Config for nvim-dap-virtual-text]], true)
+try_loadstring("\27LJ\2\nC\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\26nvim-dap-virtual-text\frequire\0", "config", "nvim-dap-virtual-text")
+time([[Config for nvim-dap-virtual-text]], false)
 -- Config for: nvim-lsp
 time([[Config for nvim-lsp]], true)
 require('config.lsp')
@@ -262,6 +234,34 @@ time([[Config for nvim-lsp]], false)
 time([[Config for vim-filebeagle]], true)
 require('config.filebeagle')
 time([[Config for vim-filebeagle]], false)
+-- Config for: git-messenger.vim
+time([[Config for git-messenger.vim]], true)
+require('config.gitmessenger')
+time([[Config for git-messenger.vim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('config.completion')
+time([[Config for nvim-cmp]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+require('config.nvim-dap')
+time([[Config for nvim-dap]], false)
+-- Config for: kanagawa.nvim
+time([[Config for kanagawa.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\25colorscheme kanagawa\bcmd\bvim\0", "config", "kanagawa.nvim")
+time([[Config for kanagawa.nvim]], false)
+-- Config for: nvim-dap-ui
+time([[Config for nvim-dap-ui]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
+time([[Config for nvim-dap-ui]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('config.treesitter')
+time([[Config for nvim-treesitter]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
