@@ -66,7 +66,6 @@ return require('packer').startup(function()
     requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('gitsigns').setup() end,
   }
-
   use 'tpope/vim-fugitive'
 
   -- Colors
