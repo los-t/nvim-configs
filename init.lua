@@ -2,7 +2,7 @@ vim.cmd [[filetype plugin on]]
 vim.cmd [[filetype indent on]]
 vim.cmd [[syntax on]]
 
-vim.o.guifont = "Fira Code:h14"
+vim.o.guifont = "Fira Code:h12"
 vim.o.backspace = "indent,eol,start"
 
 vim.bo.shiftwidth = 2
