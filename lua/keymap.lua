@@ -29,6 +29,7 @@ bind("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 bind("n", "1gD", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
 bind("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 bind("n", "g0", "<cmd>lua vim.lsp.buf.document_symbol()<CR>")
+bind("n", "<leader>gf", "<cmd> lua vim.lsp.buf.format()<CR>")
 bind("n", "<leader>o", "<cmd>lua vim.diagnostic.open_float(0, {scope=\"line\", border=\"single\"})<CR>")
 
 bind("n", "-", ":FileBeagleBufferDir<CR>")

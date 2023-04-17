@@ -7,6 +7,7 @@ require'lspconfig'.clangd.setup{
     "--clang-tidy",
     "--cross-file-rename",
     "--limit-references=0",
+    "--header-insertion=never",
   },
   capabilities = caps,
 }
