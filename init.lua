@@ -1,4 +1,19 @@
-vim.cmd [[filetype plugin on]]
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)vim.cmd [[filetype plugin on]]
+
+vim.g.mapleader = " " -- Must be before call to Lazy.nvim
+require("lazy").setup("plugins")
+
 vim.cmd [[filetype indent on]]
 vim.cmd [[syntax on]]
 
@@ -42,12 +57,10 @@ vim.o.titlestring = "%f"
 vim.o.clipboard = "unnamedplus"
 vim.o.hidden = true
 
-vim.g.mapleader = " "
 if vim.fn.has("win32") then
   vim.g.mouse = "a"
 end
 
-require('plugins')
 require('keymap')
 
 vim.api.nvim_exec([[
