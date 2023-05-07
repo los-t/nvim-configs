@@ -1,3 +1,19 @@
+local daily_used_parsers = {"c",
+  "cpp",
+  "hlsl",
+  "squirrel",
+  "glsl",
+  "cmake",
+  "lua",
+  "json",
+  "yaml",
+  "toml",
+  "gitcommit",
+  "gitignore",
+  "git_config",
+  "git_rebase",
+}
+
 return {
   'nvim-treesitter/nvim-treesitter',
   config = function()
@@ -5,7 +21,7 @@ return {
     vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
     require'nvim-treesitter.configs'.setup {
-      ensure_installed = { "c", "cpp", "hlsl", "squirrel", "glsl" },
+      ensure_installed = daily_used_parsers,
       highlight = {
         enable = true
       },
