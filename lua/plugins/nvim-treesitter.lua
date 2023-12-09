@@ -1,4 +1,5 @@
-local daily_used_parsers = {"c",
+local daily_used_parsers = {
+  "c",
   "cpp",
   "hlsl",
   "squirrel",
@@ -12,6 +13,8 @@ local daily_used_parsers = {"c",
   "gitignore",
   "git_config",
   "git_rebase",
+  "markdown",
+  "markdown_inline",
 }
 
 return {
