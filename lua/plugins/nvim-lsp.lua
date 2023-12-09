@@ -6,10 +6,12 @@ return {
       cmd = {
         "clangd",
         "--background-index",
+        "--background-index-priority=low",
         "--clang-tidy",
-        "--cross-file-rename",
+        "--rename-file-limit=0",
         "--limit-references=0",
         "--header-insertion=never",
+        "--all-scopes-completion",
       },
       capabilities = caps,
     }
