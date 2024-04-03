@@ -12,6 +12,7 @@ bind("n", "<leader>gs", ":Telescope git_stash<CR>")
 bind("n", "<leader>gd", ":Telescope git_status<CR>")
 
 bind("n", "<leader>r", ":Telescope lsp_references<CR>")
+bind("n", "<leader>s", ":Telescope lsp_dynamic_workspace_symbols<CR>")
 
 bind("n", "<leader>nh", ":nohls<CR>")
 bind("n", "<leader>cd", ":lcd %:p:h<CR>")
@@ -37,7 +38,7 @@ bind("n", "<leader>e", ":vsplit<bar>FileBeagleBufferDir<CR>")
 
 bind("t", "<Esc>", "<C-\\><C-n>")
 if (vim.fn.has("win32")) then
-  bind("n", "<leader>tb", ":vsplit<bar>term git-cmd.exe")
+  bind("n", "<leader>tb", ":vsplit<bar>term git-bash.exe<CR>i")
   bind("n", "<leader>tw", ":vsplit<bar>term<CR>i")
   bind("n", "<leader>tl", ":vsplit<bar>term bash -i<CR>i")
 else
