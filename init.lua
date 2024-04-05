@@ -77,6 +77,8 @@ vim.api.nvim_command([[autocmd TermOpen * setlocal statusline=%{b:term_title}]])
 -- Additional filetypes
 vim.filetype.add({
   extension = {
-    dshl = 'hlsl'
+    dshl = 'hlsl',
+    frag = 'glsl',
+    vert = 'glsl',
   }
 })
