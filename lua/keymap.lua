@@ -2,17 +2,17 @@ local bind = function(mode, lhs, rhs)
   vim.api.nvim_set_keymap(mode, lhs, rhs, { noremap=true, silent=true })
 end
 
-bind("n", "<leader>l", ":Telescope buffers<CR>")
-bind("n", "<leader>f", ":Telescope git_files<CR>")
-bind("n", "<leader>*", ":Telescope grep_string<CR>")
+bind("n", "<leader>l", ":FzfLua buffers<CR>")
+bind("n", "<leader>f", ":FzfLua git_files<CR>")
+bind("n", "<leader>*", ":FzfLua grep_cword<CR>")
 
-bind("n", "<leader>gb", ":Telescope git_bcommits<CR>")
-bind("n", "<leader>gl", ":Telescope git_commits<CR>")
-bind("n", "<leader>gs", ":Telescope git_stash<CR>")
-bind("n", "<leader>gd", ":Telescope git_status<CR>")
+bind("n", "<leader>gb", ":FzfLua git_bcommits<CR>")
+bind("n", "<leader>gl", ":FzfLua git_commits<CR>")
+bind("n", "<leader>gs", ":FzfLua git_stash<CR>")
+bind("n", "<leader>gd", ":FzfLua git_status<CR>")
 
-bind("n", "<leader>r", ":Telescope lsp_references<CR>")
-bind("n", "<leader>s", ":Telescope lsp_dynamic_workspace_symbols<CR>")
+bind("n", "<leader>r", ":FzfLua lsp_references<CR>")
+bind("n", "<leader>s", ":FzfLua lsp_live_workspace_symbols<CR>")
 
 bind("n", "<leader>nh", ":nohls<CR>")
 bind("n", "<leader>cd", ":lcd %:p:h<CR>")
