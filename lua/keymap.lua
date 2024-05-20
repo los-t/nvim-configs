@@ -32,6 +32,7 @@ bind("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 bind("n", "g0", "<cmd>lua vim.lsp.buf.document_symbol()<CR>")
 bind("n", "<leader>gf", "<cmd> lua vim.lsp.buf.format()<CR>")
 bind("n", "<leader>o", "<cmd>lua vim.diagnostic.open_float(0, {scope=\"line\", border=\"single\"})<CR>")
+bind("n", "<leader>hh", "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>")
 
 bind("n", "-", ":FileBeagleBufferDir<CR>")
 bind("n", "<leader>e", ":vsplit<bar>FileBeagleBufferDir<CR>")
