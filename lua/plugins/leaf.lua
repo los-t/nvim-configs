@@ -16,6 +16,8 @@ return {
         }
       })
       vim.cmd([[colorscheme leaf]])
+      vim.cmd([[hi TreesitterContextBottom gui=underline guisp=Grey]])
+      vim.cmd([[hi TreesitterContextLineNumberBottom gui=underline guisp=Grey]])
     end,
   },
 }
