@@ -1,5 +1,5 @@
 local bind = function(mode, lhs, rhs)
-  vim.api.nvim_set_keymap(mode, lhs, rhs, { noremap=true, silent=true })
+  vim.api.nvim_set_keymap(mode, lhs, rhs, { noremap = true, silent = true })
 end
 
 bind("n", "<leader>l", ":FzfLua buffers<CR>")

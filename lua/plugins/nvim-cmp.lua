@@ -12,12 +12,11 @@ return {
   config = function()
     vim.o.completeopt = "menuone,noselect,menu"
 
-    local luasnip = require'luasnip'
-    local cmp = require'cmp'
+    local cmp = require 'cmp'
     cmp.setup({
       snippet = {
         expand = function(args)
-          require'luasnip'.lsp_expand(args.body)
+          require 'luasnip'.lsp_expand(args.body)
         end
       },
       sources = cmp.config.sources({
@@ -25,15 +24,14 @@ return {
         { name = 'luasnip' },
       }),
       mapping = cmp.mapping.preset.insert({ -- copy-pasted from example
-      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
-      ['<C-n'] = cmp.mapping.select_next_item(),
-      ['<C-p'] = cmp.mapping.select_prev_item(),
-    }),
-  })
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-n'] = cmp.mapping.select_next_item(),
+        ['<C-p'] = cmp.mapping.select_prev_item(),
+      }),
+    })
   end,
 }
-

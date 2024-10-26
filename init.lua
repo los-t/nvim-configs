@@ -9,7 +9,8 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
-vim.opt.rtp:prepend(lazypath)vim.cmd [[filetype plugin on]]
+vim.opt.rtp:prepend(lazypath)
+vim.cmd [[filetype plugin on]]
 
 vim.g.mapleader = " " -- Must be before call to Lazy.nvim
 require("lazy").setup("plugins")
@@ -81,4 +82,14 @@ vim.filetype.add({
     frag = 'glsl',
     vert = 'glsl',
   }
+})
+
+-- Selective autoformat on save
+vim.api.nvim_create_augroup('AutoFormatting', {})
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*.lua',
+  group = 'AutoFormatting',
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
 })

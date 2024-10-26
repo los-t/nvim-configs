@@ -23,7 +23,7 @@ return {
     vim.o.foldmethod = "expr"
     vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
-    require'nvim-treesitter.configs'.setup {
+    require 'nvim-treesitter.configs'.setup {
       ensure_installed = daily_used_parsers,
       highlight = {
         enable = true
