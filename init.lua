@@ -64,14 +64,6 @@ end
 
 require('keymap')
 
-vim.api.nvim_exec([[
-if exists("g:neovide")
-  let g:neovide_cursor_animation_length=0
-  let g:neovide_window_scroll_animation_length=0
-  let g:neovide_window_position_animation_length=0
-endif
-]], false)
-
 -- Terminal setup
 vim.api.nvim_command([[autocmd TermOpen * setlocal statusline=%{b:term_title}]])
 
