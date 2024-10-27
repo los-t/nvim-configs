@@ -15,7 +15,7 @@ return {
       },
       capabilities = caps,
     }
-    require 'lspconfig'.tsserver.setup { capabilities = caps }
+    require 'lspconfig'.ts_ls.setup { capabilities = caps }
     require 'lspconfig'.lua_ls.setup {
       on_init = function(client)
         if client.workspace_folders then
