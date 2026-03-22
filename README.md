@@ -1,11 +1,8 @@
 # My neovim configs
 
-Relies on [Packer](https://github.com/wbthomason/packer.nvim), but there's no special bootstrapping
-(it has to be cloned manually before first run).
+Requires nvim 0.12 and its built-in vim.pack package manager.
 
-Colorscheme colors/dgrin-fullcolor.vim is (or was) written by me from scratch. If you happen to
-like it, you're free to use it with or without credit - it's just colorcodes after all. But please
-don't claim, I've stolen it from you :-)
-
-The colorshceme is still very far from being complete. If I ever think dgrin (it was a 256-color
-scheme once, hence the fullcolor suffix here) is finished, I'll probably move it to a separate repo.
+Things to do for (my) successful migration from previous config:
+- remove nvim's data folder to avoid any conflicts
+- update FZF to at least 0.36 (current is 0.70 at the time of writing).
+- requires [tree-sitter](https://github.com/tree-sitter/tree-sitter/releases) executable to compile parsers

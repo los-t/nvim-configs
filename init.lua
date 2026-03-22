@@ -1,22 +1,9 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-vim.cmd [[filetype plugin on]]
+vim.g.mapleader = " "
+vim.g.localmapleader = " "
 
-vim.g.mapleader = " " -- Must be before call to Lazy.nvim
-require("lazy").setup("plugins")
-
-vim.cmd [[filetype indent on]]
-vim.cmd [[syntax on]]
+vim.cmd.filetype('plugin on')
+vim.cmd.filetype('indent on')
+vim.cmd.syntax('on')
 vim.o.termguicolors = true
 
 vim.o.guifont = "FiraCode Nerd Font Mono:h12,Fira Code:h12"
@@ -85,4 +72,10 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   callback = function()
     vim.lsp.buf.format({ async = false })
   end,
+})
+
+vim.lsp.enable({
+  'clangd',
+  'lua_ls',
+  'ruff',
 })

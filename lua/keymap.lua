@@ -42,9 +42,6 @@ bind("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
 bind("n", "<leader>o", "<cmd>lua vim.diagnostic.open_float(0, {scope=\"line\", border=\"single\"})<CR>")
 bind("n", "<leader>hh", "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>")
 
-bind("n", "-", ":FileBeagleBufferDir<CR>")
-bind("n", "<leader>e", ":vsplit<bar>FileBeagleBufferDir<CR>")
-
 bind("t", "<Esc>", "<C-\\><C-n>")
 if (vim.fn.has("win32")) then
   bind("n", "<leader>tb", ":vsplit<bar>term git-bash.exe<CR>i")
