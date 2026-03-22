@@ -13,6 +13,13 @@ bind("n", "<leader>gd", ":FzfLua git_status<CR>")
 
 bind("n", "<leader>r", ":FzfLua lsp_references<CR>")
 bind("n", "<leader>s", ":FzfLua lsp_live_workspace_symbols<CR>")
+bind("n", "<leader>a", ":FzfLua lsp_code_actions<CR>")
+bind("n", "<leader>sd", ":FzfLua lsp_document_symbols<CR>")
+bind("n", "<leader>dd", ":FzfLua lsp_workspace_diagnostics<CR>")
+
+bind("n", "<leader>dvo", ":DiffviewOpen<CR>")
+bind("n", "<leader>dvc", ":DiffviewClose<CR>")
+bind("n", "<leader>dvr", ":DiffviewRefresh<CR>")
 
 bind("n", "<leader>nh", ":nohls<CR>")
 bind("n", "<leader>cd", ":lcd %:p:h<CR>")

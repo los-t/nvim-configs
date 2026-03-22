@@ -12,10 +12,12 @@ return {
         "--limit-references=0",
         "--header-insertion=never",
         "--all-scopes-completion",
+        "--query-driver=*devtools*",
       },
       capabilities = caps,
     }
-    require 'lspconfig'.ts_ls.setup { capabilities = caps }
+    -- require 'lspconfig'.ts_ls.setup { capabilities = caps }
+    require 'lspconfig'.ruff.setup { capabilities = caps }
     require 'lspconfig'.lua_ls.setup {
       on_init = function(client)
         if client.workspace_folders then

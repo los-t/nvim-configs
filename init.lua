@@ -17,6 +17,7 @@ require("lazy").setup("plugins")
 
 vim.cmd [[filetype indent on]]
 vim.cmd [[syntax on]]
+vim.o.termguicolors = true
 
 vim.o.guifont = "FiraCode Nerd Font Mono:h12,Fira Code:h12"
 vim.o.backspace = "indent,eol,start"
