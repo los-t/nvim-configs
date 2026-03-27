@@ -36,6 +36,7 @@ require('nvim-treesitter').install({
   'markdown_inline',
   'zsh',
   'bash',
+  'python',
 })
 
 -- must start manually now, sigh...
