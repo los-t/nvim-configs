@@ -2,6 +2,9 @@ local bind = function(mode, lhs, rhs)
   vim.api.nvim_set_keymap(mode, lhs, rhs, { noremap = true, silent = true })
 end
 
+bind("n", "-", "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>")
+bind("n", "<leader>-", "<cmd>lua MiniFiles.open()")
+
 bind("n", "<leader>l", ":FzfLua buffers<CR>")
 bind("n", "<leader>f", ":FzfLua git_files<CR>")
 bind("n", "<leader>*", ":FzfLua grep_cword<CR>")
